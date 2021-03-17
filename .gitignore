@@ -2,3 +2,4 @@ node_modules
 images
 logos
 .vscode
+gulpfile.js
