@@ -1,0 +1,79 @@
+@use './global'as g;
+@use './caravanSection'as c;
+
+.credit {
+    display: flex;
+    justify-content: space-between;
+    background: g.$backgroundColor2;
+    padding: 0 5% 5%;
+    font-size: g.$normalFont;
+    font-family: 'Monda', sans-serif;
+}
+
+.sourcesTitle,
+.creditTitle {
+    margin-bottom: .5em;
+}
+
+.creditSubTitle {
+    font-size: g.$smallFont;
+    margin-bottom: 1em;
+}
+
+.sourceList {
+    list-style-position: inside;
+
+    li {
+        margin-bottom: 1em;
+
+        &:focus,
+        &:hover {
+            border-bottom: 1px solid white;
+        }
+    }
+}
+
+.logos {
+    display: flex;
+
+    .logoWrapper {
+        width: 8%;
+        margin-right: 5%;
+
+        img {
+            width: 100%;
+
+            &:focus,
+            &:hover {
+                transform: scale(1.25);
+            }
+        }
+    }
+}
+
+.rightLogo {
+    margin-right: 0 !important;
+}
+
+
+@media (max-width: 590px) {
+    .credit {
+        flex-direction: column;
+        text-align: center;
+        font-size: c.$bigFont;
+    }
+
+    .creditSubTitle {
+        font-size: c.$bigFont;
+    }
+
+    .logos {
+        justify-content: center;
+        margin-bottom: 1em;
+
+        .logoWrapper {
+            width: 7%;
+            margin-right: 5%;
+        }
+    }
+}

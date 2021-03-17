@@ -1,0 +1,54 @@
+$veryBigFont: calc(1.5rem + 3vw);
+$bigFont: calc((1.5rem + 3vw) / 2);
+$normalFont: calc(.5rem + 1vw);
+$smallFont: calc(.5rem + .75vw);
+$backgroundColor1: #1C3359;
+$backgroundColor2: #162B45;
+$orange: #FDC242;
+
+@mixin flex($justify, $align, $direction) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-weight: 400;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Monda', sans-serif;
+    overflow-x: hidden;
+    color: white;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.orangeColor {
+    color: $orange;
+}
+
+.title {
+    font-size: $veryBigFont;
+}
+
+.hide {
+    overflow-y: hidden;
+}
+
+img {
+    image-rendering: -webkit-optimize-contrast;
+}

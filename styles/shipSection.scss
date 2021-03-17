@@ -1,0 +1,242 @@
+@use './global'as g;
+
+.shipPageContainer {
+    position: relative;
+    background: g.$backgroundColor1;
+    text-align: center;
+    @include g.flex(flex-start, center, column);
+}
+
+.windImg,
+.windCover {
+    position: absolute;
+    width: 12%;
+    height: 15%;
+}
+
+.windImg {
+    animation: opacity 3.5s forwards linear;
+}
+
+.windCover {
+    background: g.$backgroundColor1;
+    z-index: 1;
+    animation: left-to-right-wind 3.5s forwards linear;
+}
+
+.wind1,
+.cover1 {
+    top: 50%;
+    left: 10%;
+    animation-delay: .25s;
+}
+
+.wind2,
+.cover2 {
+    top: 25%;
+    right: 5%;
+    animation-delay: 1.5s;
+}
+
+.waveContainer {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding-bottom: 5%;
+}
+
+.waveTopContainer,
+.waveBottomContainer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 17%;
+    width: 100vw;
+    animation: waveMove 16s linear forwards, waveMove3 32s linear infinite 16s;
+}
+
+.waveTopContainer {
+    bottom: 10.5%;
+}
+
+.waveBottomContainer {
+    z-index: 2;
+}
+
+.waveTop,
+.waveBottom {
+    width: 100%;
+    height: 100%;
+}
+
+.ship-img {
+    width: 25%;
+    min-width: 250px;
+    height: auto;
+    display: block;
+    position: relative;
+    right: 5%;
+    z-index: 1;
+    animation: ship-shake 2s alternate infinite;
+}
+
+.waveTopContainer2,
+.waveBottomContainer2 {
+    animation: waveMove2 32s linear infinite;
+}
+
+.titleContainer {
+    margin: 2% 0 1% 0;
+
+    .title,
+    .subTitle {
+        position: relative;
+        z-index: 2;
+    }
+
+    .title {
+        font-size: g.$veryBigFont;
+        letter-spacing: .72rem;
+    }
+
+    .subTitle {
+        font-size: g.$bigFont;
+        letter-spacing: .36rem;
+        margin-bottom: 2em;
+    }
+}
+
+.contact-btn {
+    text-decoration: none;
+    color: black;
+    background: g.$orange;
+    font-size: g.$normalFont;
+    padding: .5em 2.5em;
+    transition: all .4s ease-in-out;
+
+    &:hover,
+    &:focus {
+        letter-spacing: .3em;
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: g.$backgroundColor1;
+    padding: 2rem;
+}
+
+#logo,
+.menuWrapper {
+    cursor: pointer;
+}
+
+#logo {
+    width: 8%;
+    max-width: 250px;
+    min-width: 125px;
+}
+
+.menuWrapper {
+    right: 0;
+    display: flex;
+    align-items: center;
+    z-index: 11;
+
+    .menu {
+        font-size: 1.75rem;
+        margin-right: .5em;
+        position: relative;
+    }
+
+    .line1,
+    .line2,
+    .line3 {
+        display: block;
+        margin: 1rem auto;
+        margin-top: 0;
+        height: 2px;
+        width: 5rem;
+        background: white;
+    }
+
+    .line2 {
+        width: 4rem;
+    }
+
+    .line3 {
+        width: 3rem;
+        margin-bottom: 0;
+    }
+}
+
+.lineSize {
+    width: 5rem !important;
+}
+
+@media (max-width: 1024px) {
+    #logo {
+        min-width: 100px;
+    }
+
+    .titleContainer {
+
+        .title {
+            letter-spacing: .32rem;
+        }
+
+        .subTitle {
+            letter-spacing: .18rem;
+        }
+    }
+
+    .menuWrapper {
+        .menu {
+            font-size: 1.25rem;
+        }
+
+        .line1 {
+            width: 3rem;
+        }
+
+        .line2 {
+            width: 2.5rem;
+        }
+
+        .line3 {
+            width: 1.5rem;
+        }
+    }
+
+    .lineSize {
+        width: 3rem !important;
+    }
+}
+
+@media (max-width: 580px) {
+    .ship-img {
+        min-width: 200px;
+    }
+
+    .waveContainer {
+        padding-bottom: 10%;
+    }
+
+    html {
+        font-size: 50%;
+    }
+
+    .navbar {
+        padding: 2rem;
+
+        #logo {
+            min-width: 75px;
+        }
+    }
+
+    .titleContainer {
+        margin: 15% 0;
+    }
+}

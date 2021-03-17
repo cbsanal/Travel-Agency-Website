@@ -1,0 +1,90 @@
+@use './global'as g;
+
+.fullScreenNavbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    @include g.flex(space-around, center, row);
+    z-index: 10;
+    opacity: 1;
+    clip-path: circle(50px at 100% -10%);
+    -webkit-clip-path: circle(50px at 100% -10%);
+}
+
+.navLinks {
+    z-index: 10;
+    background: white;
+    color: black;
+    list-style: none;
+}
+
+.aboutMe {
+    display: flex;
+    flex-direction: column;
+}
+
+.aboutMeTitle,
+.aboutMeParag {
+    color: black;
+    font-size: g.$normalFont;
+    margin-bottom: .5em;
+}
+
+.aboutMeTitle {
+    font-weight: 700;
+}
+
+.navLinks li {
+    font-size: g.$veryBigFont;
+    padding: .5em 0;
+
+    a {
+        color: black;
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+    }
+}
+
+@media (max-width: 800px) {
+    .fullScreenNavbar {
+        justify-content: space-between;
+    }
+
+    .aboutMe {
+        flex: 1;
+        padding: 0 2em;
+    }
+
+    .navLinks {
+        flex: 1.5;
+        text-align: center;
+    }
+}
+
+@media (max-width: 590px) {
+    .fullScreenNavbar {
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    .aboutMe {
+        flex: none;
+        text-align: center;
+
+        .aboutMeTitle,
+        .aboutMeParag {
+            font-size: g.$bigFont;
+        }
+    }
+
+    .navLinks {
+        flex: none;
+        margin-bottom: 2em;
+    }
+}

@@ -1,0 +1,117 @@
+@use './global'as g;
+
+$veryBigFont: calc(.75rem + 2vw);
+$bigFont: calc(.45rem + 2vw);
+
+.caravanContainer {
+    position: relative;
+    background-image: url(../minifyImages/caravan-background.jpg);
+    // background-position: left bottom;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.caravanBottomContainer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 100vw;
+    height: 23%;
+}
+
+.caravanBottomContainer img {
+    height: 100%;
+    width: 100%;
+}
+
+.caravan {
+    position: absolute;
+    width: 30%;
+    max-width: 375px;
+    min-width: 230px;
+    bottom: 20%;
+    left: 2%;
+}
+
+.caravanTitleContainer {
+    background: #1c3359af;
+    position: relative;
+    width: 40%;
+    z-index: 3;
+    left: 60%;
+    text-align: center;
+    @include g.flex(center, center, column);
+    padding: 7%;
+}
+
+.caravanTitle {
+    font-size: $veryBigFont;
+}
+
+.rentCaravanTitle {
+    font-size: $bigFont;
+    margin: .75em 0;
+}
+
+.priceListTitle {
+    border-bottom: 1.5px solid white;
+    font-size: g.$bigFont;
+}
+
+.priceList {
+    list-style: none;
+
+    li {
+        font-size: g.$bigFont;
+        margin: .75em 0;
+    }
+}
+
+.startCarBtn {
+    margin-top: 2em;
+    font-size: g.$normalFont;
+    color: black;
+    background-color: #FDC242;
+    border: none;
+    padding: .75em 2.5em;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+
+.startCarBtn:hover,
+.startCarBtn:hover:focus {
+    transform: scale(1.25);
+}
+
+@media (max-width: 1024px) {
+    .caravanTitleContainer {
+        width: 50%;
+        left: 50%;
+    }
+}
+
+@media (max-width: 590px) {
+    .caravanTitleContainer {
+        width: 100%;
+        left: 0;
+
+        .caravanTitle {
+            font-size: g.$veryBigFont;
+        }
+
+        .rentCaravanTitle {
+            font-size: $veryBigFont;
+        }
+
+        .rentCaravanTitle,
+        .priceList li {
+            margin: 1.5em 0;
+        }
+    }
+
+    .startCarBtn {
+        font-size: g.$bigFont;
+    }
+}

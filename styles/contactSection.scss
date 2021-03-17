@@ -1,0 +1,131 @@
+@use './global'as g;
+@use './caravanSection'as c;
+
+.contact {
+    background: g.$backgroundColor2;
+    padding: 0 5% 10%;
+    @include g.flex(space-between, center, row);
+}
+
+.contactTitle {
+    font-size: g.$bigFont;
+    line-height: .5em;
+    margin-bottom: 2em;
+}
+
+.contactForm {
+    margin-left: 10em;
+    text-align: left;
+    flex: 1;
+    @include g.flex(center, center, column);
+}
+
+.formGroup {
+    margin-bottom: 5em;
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroupWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    max-width: 800px;
+    min-width: 250px;
+}
+
+.contactImgContainer {
+    flex: 1;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+input {
+    padding: .75em .25em;
+    transition: .25s ease-in-out;
+    width: 100%;
+    font-family: 'Monda', sans-serif;
+    font-size: g.$smallFont;
+
+    &:hover,
+    &:focus {
+        transform: scale(1.05);
+        border: 5px solid g.$orange;
+    }
+}
+
+label {
+    font-size: g.$normalFont;
+}
+
+.btnWrapper {
+    text-align: center;
+
+    .submitBtn {
+        padding: .75em 3.5em;
+        font-size: g.$normalFont;
+        background: #31539A;
+        color: white;
+        border: 0;
+        cursor: pointer;
+    }
+}
+
+.submitBtn:hover,
+.submitBtn:focus {
+    transform: scale(1.1);
+    transition: all .25s ease-in-out;
+}
+
+@media (max-width: 1024px) {
+    .contact {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contactImgContainer {
+        margin-bottom: 3em;
+
+        img {
+            width: 65%;
+            height: auto;
+        }
+    }
+
+    .formGroupWrapper {
+        min-width: 200px;
+    }
+
+    .contactForm {
+        margin-left: 0em;
+    }
+}
+
+@media (max-width: 590px) {
+    .btnWrapper {
+        .submitBtn {
+            font-size: g.$bigFont;
+        }
+    }
+
+    label {
+        font-size: c.$bigFont;
+        margin-bottom: 1em;
+    }
+
+    .contactTitle {
+        font-size: g.$veryBigFont;
+    }
+
+    input {
+        font-size: c.$bigFont;
+
+        &:hover,
+        &:focus {
+            border: 2px solid g.$orange;
+        }
+    }
+}

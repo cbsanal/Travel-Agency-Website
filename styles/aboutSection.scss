@@ -1,0 +1,62 @@
+@use './global'as g;
+@use 'caravanSection'as c;
+
+.aboutUs {
+    background: g.$backgroundColor2;
+    display: flex;
+    text-align: left;
+    padding: 10% 5%;
+}
+
+.aboutTitleWrapper {
+    flex: 1;
+    padding-right: 5%;
+
+    .aboutTitle {
+        font-size: c.$veryBigFont;
+        margin-bottom: 1em;
+    }
+}
+
+.aboutImgWrapper {
+    display: flex;
+    flex: 1;
+    max-width: 700px;
+}
+
+.aboutImg {
+    width: 100%;
+    height: 100%;
+}
+
+.aboutParag {
+    font-size: g.$normalFont;
+    line-height: 2;
+    letter-spacing: .1em;
+}
+
+@media (max-width: 590px) {
+
+    .aboutUs {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .aboutImg {
+        width: 60%;
+        height: auto;
+        margin: auto;
+    }
+
+    .aboutTitleWrapper {
+        padding-right: 0%;
+
+        .aboutTitle {
+            font-size: g.$veryBigFont;
+        }
+    }
+
+    .aboutParag {
+        font-size: c.$bigFont;
+    }
+}

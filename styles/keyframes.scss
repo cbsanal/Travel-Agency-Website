@@ -1,0 +1,80 @@
+// Winds
+
+@keyframes left-to-right-wind {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes opacity {
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+// Waves
+
+@keyframes waveMove {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(100%);
+
+    }
+}
+
+@keyframes waveMove2 {
+    0% {
+        transform: translateX(-99.9%);
+    }
+
+    100% {
+        transform: translateX(100%);
+
+    }
+}
+
+@keyframes waveMove3 {
+    0% {
+        transform: translateX(-99.78%);
+    }
+
+    100% {
+        transform: translateX(100%);
+
+    }
+}
+
+// Ship
+
+@keyframes ship-shake {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(9deg);
+    }
+}
+
+// Caravan
+
+@keyframes caravan-left-to-right {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(100vw);
+    }
+}
